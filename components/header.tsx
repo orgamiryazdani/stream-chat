@@ -13,6 +13,9 @@ export default function Header() {
             <Link href='/'>Home</Link>
           </li>
           <li>
+            <Link href='/chat'>Chat</Link>
+          </li>
+          {/* <li>
             <Link href='/protected/server'>Protected (server)</Link>
           </li>
           <li>
@@ -20,7 +23,7 @@ export default function Header() {
           </li>
           <li>
             <Link href='/api/me'>Who am I?</Link>
-          </li>
+          </li> */}
         </ul>
 
         <div className='flex items-center justify-between gap-6'>
