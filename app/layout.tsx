@@ -41,7 +41,6 @@ export default function RootLayout({
       <html lang='en' className='scroll-smooth' suppressHydrationWarning>
         <body
           className={cn(
-            'flex min-h-screen flex-col',
             geistSans.variable,
             geistMono.variable,
             inter.variable,
@@ -49,9 +48,9 @@ export default function RootLayout({
           )}
         >
           <Providers>
-            <Header />
-            <main className='grow'>{children}</main>
-            <Footer />
+            {/* <Header /> */}
+            {children}
+            {/* <Footer /> */}
           </Providers>
         </body>
       </html>

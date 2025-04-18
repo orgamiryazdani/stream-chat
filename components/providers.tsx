@@ -2,6 +2,9 @@
 
 import { ThemeProvider, useTheme } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
+import { usePathname } from 'next/navigation'
+import Header from './header'
+import Footer from './footer'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -11,7 +14,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       defaultTheme='dark'
       disableTransitionOnChange
     >
-      {children}
+      <Layout>{children}</Layout>
       <ToasterProvider />
     </ThemeProvider>
   )
@@ -27,5 +30,22 @@ function ToasterProvider() {
       position='top-center'
       theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
     />
+  )
+}
+
+function Layout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const isChat = pathname.startsWith('/chat')
+
+  if (isChat) {
+    return children
+  }
+
+  return (
+    <section className='flex w-full flex-col'>
+      <Header />
+      <main className='grow'>{children}</main>
+      <Footer />
+    </section>
   )
 }
