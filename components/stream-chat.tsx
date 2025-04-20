@@ -93,8 +93,11 @@ export default function StreamChat({ userData }: StreamChatProps) {
       >
         <Channel EmojiPicker={EmojiPicker} emojiSearchIndex={SearchIndex}>
           <Window>
-            <div className='flex items-center gap-x-2 pl-1 sm:pl-0'>
-              <ArrowLeft onClick={() => setShowChat(false)}  className='cursor-pointer sm:hidden'/>
+            <div className='flex w-full items-center gap-x-2 bg-zinc-900 pl-1 sm:pl-0'>
+              <ArrowLeft
+                onClick={() => setShowChat(false)}
+                className='cursor-pointer sm:hidden'
+              />
               <ChannelHeader />
             </div>
             <MessageList />
