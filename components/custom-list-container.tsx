@@ -21,6 +21,7 @@ import { TooltipProvider } from '@radix-ui/react-tooltip'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 import { ThemeToggle } from './theme-toggle'
 import { UserButton } from '@clerk/nextjs'
+import { ChannelListPlaceholder } from './placeholders/channel-list-placeholder'
 
 export default function CustomListContainer(
   props: PropsWithChildren<ChannelListMessengerProps<DefaultStreamChatGenerics>>
@@ -36,7 +37,7 @@ export default function CustomListContainer(
   }
 
   if (loading) {
-    return <LoadingIndicator />
+    return <ChannelListPlaceholder />
   }
 
   return (

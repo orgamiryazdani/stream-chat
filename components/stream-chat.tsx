@@ -20,7 +20,8 @@ import {
   Thread,
   Window,
   useCreateChatClient,
-  DefaultStreamChatGenerics
+  DefaultStreamChatGenerics,
+  LoadingIndicator
 } from 'stream-chat-react'
 import { EmojiPicker } from 'stream-chat-react/emojis'
 import { init, SearchIndex } from 'emoji-mart'
@@ -64,7 +65,11 @@ export default function StreamChat({ userData }: StreamChatProps) {
   }
 
   if (!client) {
-    return null
+    return (
+      <div className='flex h-full w-full items-center justify-center'>
+        <LoadingIndicator />
+      </div>
+    )
   }
 
   return (
@@ -86,7 +91,6 @@ export default function StreamChat({ userData }: StreamChatProps) {
         )}
         sendChannelsToList
       />
-
       <div
         className={`absolute left-0 top-0 h-full w-full sm:relative ${showChat ? 'flex' : 'hidden sm:flex'}`}
       >
