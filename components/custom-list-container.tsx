@@ -5,8 +5,7 @@ import {
   DefaultStreamChatGenerics,
   ChannelListMessengerProps,
   LoadingErrorIndicator,
-  LoadingIndicator,
-  useChatContext
+  LoadingIndicator
 } from 'stream-chat-react'
 import {
   Dialog,
@@ -16,7 +15,6 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog'
-import { Input } from '@/components/ui/input'
 import NewConversationForm from '@/components/new-conversation-form'
 import { MessageSquarePlus } from 'lucide-react'
 import { TooltipProvider } from '@radix-ui/react-tooltip'
@@ -27,7 +25,7 @@ import { UserButton } from '@clerk/nextjs'
 export default function CustomListContainer(
   props: PropsWithChildren<ChannelListMessengerProps<DefaultStreamChatGenerics>>
 ) {
-  const { loadedChannels, error, loading, children } = props
+  const { error, loading, children } = props
   const [dialogIsOpen, setDialogIsOpen] = useState(false)
   function closeDialog() {
     setDialogIsOpen(false)
@@ -75,9 +73,6 @@ export default function CustomListContainer(
                 </DialogContent>
               </Dialog>
             </div>
-          </div>
-          <div className='mt-4'>
-            <Input placeholder='Search...' className='bg-muted' />
           </div>
         </header>
       </div>

@@ -23,7 +23,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'chats',
+  title: 'Chats',
   description: 'chat room'
 }
 

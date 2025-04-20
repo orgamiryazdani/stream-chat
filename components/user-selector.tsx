@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/popover'
 import { Separator } from '@/components/ui/separator'
 import { User } from 'stream-chat'
+import truncateText from '@/utils/truncateText'
 
 interface UserSelectorProps {
   users: User[]
@@ -66,7 +67,7 @@ export default function UserSelector({
                         key={user.id}
                         className='rounded-sm px-1 font-normal'
                       >
-                        {user.name || user.id}
+                        {truncateText(user.name! || user.id, 7)}
                       </Badge>
                     ))
                 )}
@@ -105,7 +106,7 @@ export default function UserSelector({
                     >
                       <CheckIcon className={cn('h-4 w-4')} />
                     </div>
-                    {user.name || user.id}
+                    {truncateText(user.name! || user.id, 25)}
                   </CommandItem>
                 )
               })}

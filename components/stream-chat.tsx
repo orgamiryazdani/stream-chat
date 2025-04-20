@@ -43,7 +43,6 @@ interface StreamChatProps {
 export default function StreamChat({ userData }: StreamChatProps) {
   const { resolvedTheme } = useTheme()
   const [showChat, setShowChat] = useState(false)
-  console.log(showChat)
 
   const tokenProvider = useCallback(async () => {
     return await createToken(userData.id)
@@ -93,7 +92,7 @@ export default function StreamChat({ userData }: StreamChatProps) {
       >
         <Channel EmojiPicker={EmojiPicker} emojiSearchIndex={SearchIndex}>
           <Window>
-            <div className='flex w-full items-center gap-x-2 dark:bg-zinc-900 pl-1 sm:pl-0'>
+            <div className='flex w-full items-center gap-x-2 pl-1 dark:bg-zinc-900 sm:pl-0'>
               <ArrowLeft
                 onClick={() => setShowChat(false)}
                 className='cursor-pointer sm:hidden'
