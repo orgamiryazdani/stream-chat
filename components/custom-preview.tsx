@@ -36,16 +36,17 @@ export default function CustomPreview(props: Props) {
   }
 
   return (
-    <div
-      onClick={() => {
-        setActiveChannel?.(channel)
-        setShowChat(true)
-      }}
-      className='relative'
-    >
-      <ChannelPreviewMessenger {...props} />
+    <div className='relative w-full'>
+      <div
+        onClick={() => {
+          setActiveChannel?.(channel)
+          setShowChat(true)
+        }}
+      >
+        <ChannelPreviewMessenger {...props} />
+      </div>
       <Dialog>
-        <DialogTrigger>
+        <DialogTrigger className=''>
           <Trash2 className='absolute right-2 top-3 size-5 cursor-pointer text-red-500' />
         </DialogTrigger>
         <DialogContent>
