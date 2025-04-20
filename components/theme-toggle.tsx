@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-
 import { Button } from '@/components/ui/button'
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 
@@ -27,9 +26,9 @@ export function ThemeToggle() {
       }}
     >
       {resolvedTheme === 'dark' ? (
-        <SunIcon className='size-4 text-orange-300' />
+        <SunIcon className='size-5 text-orange-300' />
       ) : (
-        <MoonIcon className='size-4 text-sky-950' />
+        <MoonIcon className='size-5 text-sky-950' />
       )}
 
       <span className='sr-only'>Toggle theme</span>

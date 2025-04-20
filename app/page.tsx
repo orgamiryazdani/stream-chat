@@ -1,13 +1,18 @@
-export default function Home() {
-  return (
-    <section className='py-24'>
-      <div className='container'>
-        <h1 className='font-serif text-3xl font-bold'>NextJs Clerk Starter</h1>
-        <p className='mt-3 text-muted-foreground'>
-          A NextJs starter template with Clerk authentication, shadcn/ui and
-          Tailwind CSS.
-        </p>
-      </div>
-    </section>
-  )
+import StreamChat from '@/components/stream-chat'
+import { currentUser } from '@clerk/nextjs/server'
+
+export default async function Chat() {
+  const user = await currentUser()
+
+  if (!user) {
+    return null
+  }
+
+  const userData = {
+    id: user.id,
+    ...(user.firstName ? { name: user.fullName ?? undefined } : {}),
+    ...(user.imageUrl ? { image: user.imageUrl } : {})
+  }
+
+  return <StreamChat userData={userData} />
 }

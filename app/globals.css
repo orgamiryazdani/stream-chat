@@ -86,10 +86,22 @@ body {
 }
 .str-chat__channel-list {
   width: 30%;
+  min-width: 300px;
 }
 .str-chat__channel {
   width: 100%;
 }
 .str-chat__thread {
   width: 45%;
+}
+
+@media only screen and (max-width: 640px) {
+  .str-chat__channel {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .str-chat__channel-list {
+    width: 100%;
+  }
 }
