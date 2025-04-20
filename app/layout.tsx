@@ -23,8 +23,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Next Shadcn Template',
-  description: 'NextJs template with shadcn/ui'
+  title: 'chats',
+  description: 'chat room'
 }
 
 export default function RootLayout({
